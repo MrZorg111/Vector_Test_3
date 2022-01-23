@@ -3,12 +3,11 @@
 
 std::vector<int> add(std::vector<int> a, int b) {
     std::vector<int> tempo(a.size());
-    for(int i = 0, j = 1; i < a.size(); i++, j++) {
+    for(int i = 0, j = 1; i < a.size() - 1; i++, j++) {
         tempo[i] = a[j];
-        tempo[a.size()] = b;
+        tempo[a.size() - 1] = b;
     }
     return tempo;
-
 }
 
 int main() {
@@ -19,15 +18,14 @@ int main() {
         std::cin >> n;
         if(n == - 1) {
             break;
-        }
+            }
         if (element >= 5) {
             vec = add(vec, n);
-        }
+            }
         else {
             vec[i] = n;
             element++;
-            std::cout << element;
-        }
+            }
     }
 
     for (int t = 0; t < vec.size(); t++){
